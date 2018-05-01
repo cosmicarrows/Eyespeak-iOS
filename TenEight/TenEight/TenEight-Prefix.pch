@@ -1,0 +1,104 @@
+//
+// Prefix header for all source files of the 'TenEight' target in the 'TenEight' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <RestKit/RestKit.h>
+#import <RestKit/CoreData.h>
+#import <QuickLook/QuickLook.h>
+
+#import "TEBase.h"
+
+#import "TEStatus.h"
+#import "TELoginInfo.h"
+#import "TELogin.h"
+#import "TEGetPersonalInfo.h"
+#import "TEAppDelegate.h"
+#import "TEUpdatePersonalInfo.h"
+#import "TEAttribute.h"
+#import "TEGetPreferences.h"
+#import "TEUpdatePreferences.h"
+#import "TETourInfo.h"
+#import "TECreatedTours.h"
+#import "TEAddTourInfo.h"
+#import "TERateBuilding.h"
+#import "TEPostPhotoForBuilding.h"
+#import "TEPostDocumentForBuilding.h"
+#import "TEBuildingInfoInTour.h"
+#import "TEGetBuildingsInTourInfo.h"
+#import "TEGetDetailsForBuilding.h"
+#import "TEPhotoInfo.h"
+#import "TEDetailsForBuilding.h"
+#import "TEDocumentInfo.h"
+#import "TEScoreInfo.h"
+#import "TEAddUserToTour.h"
+#import "TEAddBuildingToTour.h"
+#import "TESearchBuilding.h"
+#import "TEBuildingInfo.h"
+#import "TEPersistentLoginInfo.h"
+#import "TEGetMembersInTour.h"
+#import "TETourMember.h"
+#import "TEAddBuilding.h"
+#import "TEUpdateBuilding.h"
+#import "TEDetailedErrorMessageInfo.h"
+#import "TEEditBuildingRentalInfo.h"
+#import "TEEditBuildingRentalInfoInfo.h"
+#import "TERemoveBuildingFromTour.h"
+#import "TERemoveUserFromTour.h"
+#import "TEGetBuildingRentalInfo.h"
+#import "TeBuildingRentalInfo.h"
+#import "TEInvitedTours.h"
+#import "TEPostPhoto.h"
+#import "TEPostPhotoInfo.h"
+#import "TEBaseViewController.h"
+#import "TEProxyBase.h"
+#import "TEMembersProxy.h"
+#import "TEBuildingProxy.h"
+#import "TEPhotoProxy.h"
+#import "TETourProxy.h"
+#import "TEDocumentProxy.h"
+#import "TEPreferencesProxy.h"
+#import "DDLog.h"
+#import "DDASLLogger.h"
+#import "DDTTYLogger.h"
+#import "DDFileLogger.h"
+
+#import "TestFlight.h"
+
+// production server
+#define API_URL             @"http://teneightapp.com/api/request"
+#define URL_CREATEACCOUNT   @"http://teneightapp.com/users/register"
+
+// test server
+//#define API_URL             @"http://teneight.eyespeaklabs.com/api/request"
+//#define URL_CREATEACCOUNT   @"http://teneight.eyespeaklabs.com/users/register"
+
+
+
+#define TEN_EIGHT_DB        @"teneight.sqlite"
+
+// temporarily uncomment next line to generate a seed db
+//  #define RESTKIT_GENERATE_SEED_DB 1
+
+// Uncomment to use TestFlight SDK
+//#define TESTFLIGHT 1
+
+// Controls logging.  Restkit has it's own logging that is controlled in code in the TEAppDelegate.m file
+//static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+static const int ddLogLevel = LOG_LEVEL_ERROR;
+
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
+#endif
